@@ -1,0 +1,27 @@
+
+<div class="card">
+  <div class="card-header">
+    <h1 class="card-title">My Projects</h1>
+    <% if user_signed_in? %>
+      <% if current_user.email == "evanrpavone@gmail.com" %>
+        <%= link_to 'New Project', new_project_path, class:"btn btn-secondary" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <% @projects.each do |project| %>
+    <div class="card" style="width: 16rem; float: left; margin: 20px;">
+      <iframe src= <%= project.video_demo %> class="card-img-top" title=<%= project.project_name %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="card-body">
+        <h5 class="card-title"><%= project.project_name %></h5>
+        <p class="card-text"><%= project.description %></p>
+        <%= link_to 'Github', project.github, class: "btn btn-secondary" %>
+        <%= link_to 'Show Project', project, class: "btn btn-secondary" %>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= project.language %></small>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

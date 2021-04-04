@@ -1,0 +1,53 @@
+
+<div class="card">
+  <div class="card-header">
+    <h1 class="card-title">Evan Pavone's Portfolio</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">About Me</h5>
+    <p class="card-text">Leveraging my experience in the fast-food industry, along with a decade of volunteer work in Costa Rica. I am agile, resourceful, timely and organized. I am an up-and-coming software developer who is passionate about coding. I am experienced in Ruby on Rails, JavaScript-based programming, HTML and CSS</p>
+    <%= link_to "Projects", projects_path, class: "btn btn-success"%>
+    <br/>
+    <br/>
+    <h5 class="card-title">Technical Skills</h5>
+    <small class="text-muted">Ordered from strongest to weakest</small>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Ruby on Rails</li>
+      <li class="list-group-item">JavaScript</li>
+      <li class="list-group-item">Photoshop</li>
+      <li class="list-group-item">React</li>
+      <li class="list-group-item">HTML/CSS</li>
+      <li class="list-group-item">Command Line Interface (CLI)</li>
+    </ul>
+    <br/>
+    <h5 class="card-title">Soft Skills</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Agility</li>
+      <li class="list-group-item">Resourcefulness</li>
+      <li class="list-group-item">Timeliness</li>
+      <li class="list-group-item">Organizational Skills</li>
+      <li class="list-group-item">Problem Solving</li>
+    </ul>
+    <br/>
+    <h5 class="card-title">Hobbies</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Video Games</li>
+      <li class="list-group-item">Hiking</li>
+      <li class="list-group-item">Brewery Hopping</li>
+      <li class="list-group-item">Walking My Dog Joey</li>
+    </ul>
+  </div>
+</div>
+<br/>
+<div class="card text-center">
+  <div class="card-header">
+    <h5 class="card-title">My Links</h5>
+  </div>
+  <div class="card-body">
+    <%= link_to 'Github', "https://github.com/EvanRPavone", class: "btn btn-success", target: "_blank" %>
+    <%= link_to 'LinkedIn', "https://www.linkedin.com/in/evan-pavone/", class: "btn btn-primary", target: "_blank" %>
+    <%= link_to 'Blog', "https://dev.to/evanrpavone", class: "btn btn-danger", target: "_blank" %>
+    <%= link_to "Download Resumé", download_resume_path, class:"btn btn-warning", target: "_blank"%>
+    <a href="/images/myw3schoolsimage.jpg" download>
+  </div>
+</div>

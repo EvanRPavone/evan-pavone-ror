@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h1 class="card-title"><%= @project.project_name %></h1>
+  </div>
+  <div class="card-body">
+    <div class="embed-responsive embed-responsive-16by9 text-center">
+      <iframe width="560" height="315" src= <%= @project.video_demo %> title=<%= @project.project_name %> frameborder="0" allowfullscreen></iframe> 
+    </div> 
+    <p class="card-text" style="padding: 30px;"><strong>Description:</strong><br/><%= @project.description %></p>
+    <p class="card-text text-center"><%= link_to 'Github', @project.github, class: "btn btn-secondary" %></p>
+  </div>
+  <div class="card-footer text-muted text-center">
+    <%= @project.language %>
+  </div>
+</div>
+<br/>
+<% if user_signed_in? %>
+  <% if current_user.email == "evanrpavone@gmail.com" %>
+    <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-primary" %> |
+  <% end %>
+<% end %>
+<%= link_to 'Back', projects_path, class: "btn btn-secondary" %>

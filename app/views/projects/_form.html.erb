@@ -1,0 +1,44 @@
+<% if user_signed_in? %>
+  <% if current_user.email == "evanrpavone@gmail.com" %>
+    <%= form_with(model: project) do |form| %>
+      <% if project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+            <% project.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="card">
+        <div class="card-header">
+          Project Form
+        </div>
+        <div class="card-body">
+          <%= form.label :project_name, class:"form-label" %>
+          <%= form.text_field :project_name, class:"form-control"%>
+
+          <%= form.label :github, class:"form-label" %>
+          <%= form.text_field :github, class:"form-control" %>
+
+          <%= form.label :description, class:"form-label" %>
+          <%= form.text_area :description, class:"form-control", rows:"3" %>
+
+          <%= form.label :language, class:"form-label"%>
+          <%= form.text_field :language, class:"form-control" %>
+
+          <%= form.label :video_demo, class:"form-label" %>
+          <%= form.text_field :video_demo, class:"form-control" %>
+          
+          <%= form.number_field :user_id, id: :project_user_id, class: "form-control", value: current_user.id, type: :hidden %>
+          <br/>
+          <%= form.submit class:"btn btn-success"%>
+    <% end %>
+    <% else %>
+    <p>You are not Evan, Sorry!</p>
+        </div>
+      </div>
+  <% end %>
+<% end %>
